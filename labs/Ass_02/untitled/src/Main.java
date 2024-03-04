@@ -30,12 +30,12 @@ public class Main {
                     die1 = random.nextInt(6) + 1;
                     die2 = random.nextInt(6) + 1;
                     roll = die1 + die2;
-                    System.out.println("You rolled: " + roll);
+                    System.out.print("\nYou rolled: " + roll);
                     if (roll == point) { // point = new target
-                        System.out.println("You win!");
+                        System.out.println(" => Rolled point! You win");
                         pointOver = true;
                     } else if (roll == 7) { // 7 before point = lose
-                        System.out.println("Rolled 7 before point, you lose!");
+                        System.out.println(" => Rolled 7 before point, you lose!");
                         pointOver = true;
                     }
                 }
