@@ -14,11 +14,10 @@ public class Main {
       System.out.println("P - Print the list");
       System.out.println("Q - Quit the program");
 
-      if (pipe.hasNextLine()) {
-        String line = pipe.nextLine();
-        if (line.length() > 0) {
-          choice = line.toUpperCase().charAt(0);
-        }
+      String in = SafeInput.getRegExString(pipe, "Enter your choice", "[ADPQadpq]");
+
+      if (in.length() > 0) {
+        choice = in.toUpperCase().charAt(0);
       }
     }
 
