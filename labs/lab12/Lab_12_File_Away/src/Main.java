@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.nio.file.FileSystemException;
 import java.nio.file.Files;
@@ -16,6 +17,9 @@ public class Main {
       Path target = new File(System.getProperty("user.dir")).toPath();
       target = target.resolve("src");
       chooser.setCurrentDirectory(target.toFile());
+      chooser.removeChoosableFileFilter(chooser.getAcceptAllFileFilter());
+      FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files", "txt");
+      chooser.addChoosableFileFilter(filter);
 
       try {
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
